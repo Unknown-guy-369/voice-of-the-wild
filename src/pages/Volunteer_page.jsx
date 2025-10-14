@@ -1,9 +1,8 @@
-// src/pages/VolunteerUploadPage.jsx
-
 import { storage } from "../../firebase_app";
-import { useState, useEffect } from "react"; // Import useEffect
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"; // Import uploadBytesResumable
-import { v4 as uuidv4 } from 'uuid'; // Import uuid
+import { useState, useEffect } from "react"; 
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"; 
+import { v4 as uuidv4 } from 'uuid'; 
+import imageCompression from 'browser-image-compression';
 
 function VolunteerUploadPage() {
   const [name, setName] = useState("");
@@ -34,65 +33,82 @@ function VolunteerUploadPage() {
       setError(null); // Clear previous errors
     }
   };
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-    
-    if (!file || !name) {
-      setError("Please provide both your name and a photo to join our mission!");
-      return;
-    }
 
-    setIsUploading(true);
-    setUploadSuccess(false);
-    setError(null);
 
-    // Create a unique filename to prevent overwrites
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!file || !name) {
+    setError("Please provide both your name and a photo to join our mission!");
+    return;
+  }
+
+  setIsUploading(true);
+  setUploadSuccess(false);
+  setError(null);
+
+  try {
+    //  Compress the image first
+    const options = {
+      maxSizeMB: 0.3,          // target ~300 KB
+      maxWidthOrHeight: 800,   // resize to max 800px
+      useWebWorker: true,
+      initialQuality: 0.8      // ensure good visual clarity
+    };
+    const compressedFile = await imageCompression(file, options);
+
+    //  Create a unique filename
     const fileExtension = file.name.split('.').pop();
     const uniqueFileName = `${uuidv4()}.${fileExtension}`;
     const storageRef = ref(storage, `photos/${uniqueFileName}`);
-    
-    const uploadTask = uploadBytesResumable(storageRef, file);
 
-    // Listen for state changes, errors, and completion of the upload.
-    uploadTask.on('state_changed', 
+    //  Upload the compressed file
+    const uploadTask = uploadBytesResumable(storageRef, compressedFile);
+
+    uploadTask.on(
+      "state_changed",
       (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setUploadProgress(progress);
-      }, 
+      },
       (uploadError) => {
-        // Handle unsuccessful uploads
         console.error("Upload failed:", uploadError);
         setError("Photo upload failed. Please try again.");
         setIsUploading(false);
-      }, 
+      },
       async () => {
-        // Handle successful uploads on complete
         try {
           const photoUrl = await getDownloadURL(uploadTask.snapshot.ref);
-          
+
           // Save details to backend
           await fetch(import.meta.env.VITE_VOLUNTEER_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, photoUrl }),
           });
-          
+
           setUploadSuccess(true);
           setName("");
-          setFile(null); 
-          
+          setFile(null);
+
           setTimeout(() => setUploadSuccess(false), 5000);
 
         } catch (apiError) {
-            console.error("Error saving user data:", apiError);
-            setError("Your photo was uploaded, but we failed to save your details. Please contact support.");
+          console.error("Error saving user data:", apiError);
+          setError(
+            "Your photo was uploaded, but we failed to save your details. Please contact support."
+          );
         } finally {
-            setIsUploading(false);
+          setIsUploading(false);
         }
       }
     );
-  };
+  } catch (compressionError) {
+    console.error("Image compression failed:", compressionError);
+    setError("Failed to compress image. Please try a smaller file.");
+    setIsUploading(false);
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 flex items-center justify-center p-4">
@@ -114,7 +130,7 @@ function VolunteerUploadPage() {
             {uploadSuccess && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 font-medium flex items-center">
                 <span className="text-green-500 mr-2">🌿</span>
-                Welcome to the famil! Your pledge has been recorded.
+                Welcome to the family! Your pledge has been recorded.
               </div>
             )}
             {error && (

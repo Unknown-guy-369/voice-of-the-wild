@@ -40,62 +40,83 @@ function AmbassadorUploadPage() {
   };
   
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    if (!file || !name || !role || !desc) {
-      setError("Please fill all fields (Name, Role, Photo, and Description) to register as an Ambassador!");
-      return;
-    }
+  e.preventDefault();
 
-    setIsUploading(true);
-    setUploadSuccess(false);
-    setError(null);
-    setUploadProgress(0);
+  if (!file || !name || !role || !desc) {
+    setError("Please fill all fields (Name, Role, Photo, and Description) to register as an Ambassador!");
+    return;
+  }
 
+  setIsUploading(true);
+  setUploadSuccess(false);
+  setError(null);
+  setUploadProgress(0);
+
+  try {
+    // Compress the image
+    const options = {
+      maxSizeMB: 0.3,          // target ~300 KB
+      maxWidthOrHeight: 800,   // max width or height
+      useWebWorker: true,
+      initialQuality: 0.8      // keep good visual clarity
+    };
+
+    const compressedFile = await imageCompression(file, options);
+
+    //Create a unique filename
     const fileExtension = file.name.split('.').pop();
     const uniqueFileName = `${uuidv4()}.${fileExtension}`;
     const storageRef = ref(storage, `photo_ambd/${uniqueFileName}`);
 
-    const uploadTask = uploadBytesResumable(storageRef, file);
+    //  Upload the compressed file
+    const uploadTask = uploadBytesResumable(storageRef, compressedFile);
 
-    uploadTask.on('state_changed', 
+    uploadTask.on(
+      "state_changed",
       (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setUploadProgress(progress);
-      }, 
+      },
       (uploadError) => {
         console.error("Ambassador photo upload failed:", uploadError);
         setError("Photo upload failed. Please check your connection and try again.");
         setIsUploading(false);
-      }, 
+      },
       async () => {
         try {
           const photoUrl = await getDownloadURL(uploadTask.snapshot.ref);
-          
+
+          // Save ambassador details to backend
           await fetch(import.meta.env.VITE_AMBASSADOR_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, role, desc, photoUrl }),
           });
-          
+
           setUploadSuccess(true);
           setName("");
           setRole("");
           setDescription("");
           setFile(null);
-          
+
           setTimeout(() => setUploadSuccess(false), 5000);
 
         } catch (apiError) {
-            console.error("Error saving ambassador data:", apiError);
-            setError("Your photo was uploaded, but we failed to save your details. Please contact support.");
+          console.error("Error saving ambassador data:", apiError);
+          setError("Your photo was uploaded, but we failed to save your details. Please contact support.");
         } finally {
-            setIsUploading(false);
-            setUploadProgress(0);
+          setIsUploading(false);
+          setUploadProgress(0);
         }
       }
     );
-  };
+  } catch (compressionError) {
+    console.error("Image compression failed:", compressionError);
+    setError("Failed to compress image. Please try a smaller file.");
+    setIsUploading(false);
+    setUploadProgress(0);
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 flex items-center justify-center p-4">
