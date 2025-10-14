@@ -10,9 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              {/* <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">🌱</span>
-              </div> */}
+            
               <img src="vow_logo.jpg" className='w-8 h-8 rounded-full' alt="logo" />
               <span className="font-bold text-xl">Climate Pledge</span>
             </div>

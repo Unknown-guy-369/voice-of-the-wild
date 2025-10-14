@@ -34,7 +34,7 @@ const Register = () => {
           {/* --- CTA Buttons Section --- */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             
-            {/* 1. Primary Button: Pre-Registration */}
+           
             <a
               href='https://www.theticket9.com/event/india-book-of-records-attempt'
               className="w-full md:w-auto bg-green-500 rounded-full text-white font-bold px-8 py-4 text-lg transition-all hover:bg-green-600 hover:shadow-lg"
@@ -42,7 +42,7 @@ const Register = () => {
               Pre-Register Now @ticket9.com
             </a>
 
-            {/* 2. Secondary Button: Event Day Pledge (Disabled) */}
+          
             <a
               href="#"
               onClick={(e) => e.preventDefault()} // Prevents navigation
@@ -54,7 +54,7 @@ const Register = () => {
 
           </div>
           
-          {/* Explanatory text for the disabled button */}
+        
           <p className="mt-6 text-sm text-gray-500">
             The link for the pledge and certificate will be active on **December 02, 2025**.
           </p>

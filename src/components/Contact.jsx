@@ -56,7 +56,7 @@ const Contact = () => {
     href="https://www.instagram.com/voiceofthewild25?igsh=MXgxOGczNHQ4Y2s5Zg==" 
     target="_blank" 
     rel="noopener noreferrer"
-    className="inline-flex items-center text-green-600 hover:text-green-700 transition-colors duration-200 font-medium"
+    className="inline-flex items-center text-green-600 hover:text-green-700 transition-colors duration-200 font-semibold"
   >
     @voiceofthewild25
     <svg className="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">

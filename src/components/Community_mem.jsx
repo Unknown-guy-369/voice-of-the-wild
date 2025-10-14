@@ -31,7 +31,7 @@ const CommunityMembers = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-6xl  font-semibold text-gray-800 mb-4">
-            🌿 Guardians of the Green 🤝
+             Guardians of the Green 
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Meet the dedicated Ambassadors who have pledged to protect and nurture our environment through action.

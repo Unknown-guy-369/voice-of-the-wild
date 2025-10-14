@@ -30,7 +30,7 @@ const Stats = () => {
       });
     }, 2500);
 
-    // Initial count for demonstration
+  
     setCurrentPledges(9500);
 
     return () => clearInterval(interval);
@@ -41,7 +41,7 @@ const Stats = () => {
 
   return (
     <section className="relative py-20 md:py-24 bg-gradient-to-br from-green-700 to-green-500 overflow-hidden">
-      {/* Optional: Subtle background pattern for depth */}
+     
       <div className="absolute inset-0 bg-[url('/path/to/subtle-pattern.svg')] opacity-10"></div>
       
       <div className="relative container mx-auto px-4">
@@ -57,9 +57,9 @@ const Stats = () => {
         {/* Main Glassmorphism Card */}
         <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20 max-w-4xl mx-auto">
           
-          {/* Top Row: Hero Stat and Target Goal */}
+          {/*  Hero Stat and Target Goal */}
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8 mb-10">
-            {/* Hero Stat: Current Pledges */}
+            {/*  Current Pledges */}
             <div className="flex items-center gap-4">
               <div className="text-green-200"><UserGroupIcon /></div>
               <div>

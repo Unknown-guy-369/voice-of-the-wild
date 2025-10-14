@@ -1,6 +1,6 @@
 import React from 'react';
 
-// --- Icon Components for a professional look ---
+// --- Icon Components ---
 const TalentIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -38,7 +38,7 @@ const OrganizationAbout = () => {
           </p>
         </div>
 
-        {/* --- Vision & Who We Are (Alternating Layout) --- */}
+        {/* --- Vision & Who We Are --- */}
         <div className="space-y-16">
           {/* Our Vision */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -136,7 +136,7 @@ const OrganizationAbout = () => {
   );
 };
 
-// --- Reusable Pillar Card Component ---
+// ---  Pillar Card Component ---
 const PillarCard = ({ icon, title, subtitle, description, features }) => (
   <div className="bg-white rounded-2xl p-8 shadow-lg flex flex-col hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-green-100">
     <div className="flex-shrink-0 bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
