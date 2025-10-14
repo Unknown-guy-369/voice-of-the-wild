@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="h-16 w-26    rounded-full flex items-center justify-center mb-6">
-              <img src="/logo_gmail_lockup_default_2x_r5.png" alt="" />
+              <img src="/gmail_logo.png" alt="" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Email Support</h3>
             <p className="text-gray-600 mb-4">
@@ -46,7 +46,7 @@ const Contact = () => {
           
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-1">
   <div className="w-16 h-16  rounded-full flex items-center justify-center mb-6">
-    <img src="2227.jpg"  />
+    <img src="insta_logo.jpg"  />
   </div>
   <h3 className="text-xl font-semibold text-gray-900 mb-3">Follow Us</h3>
   <p className="text-gray-600 mb-4">

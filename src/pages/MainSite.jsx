@@ -19,7 +19,7 @@ const MainSite = () => {
       <About />
       <Members /> 
       <CommunityMembers />
-      <Stats />
+      {/* <Stats /> Will enable on event day */} 
       <Register />
       <VolunteerCarousel />
       <Contact />

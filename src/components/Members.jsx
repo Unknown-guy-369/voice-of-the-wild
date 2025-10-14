@@ -16,7 +16,7 @@ const Members = () => {
           <a 
             href="/EVENT BROCHURE - INDIA BOOK OF RECORDS.pdf" 
             download="EVENT BROCHURE - INDIA BOOK OF RECORDS.pdf"
-            className='inline-block bg-green-700 text-white font-bold py-3 px-8 rounded-full hover:bg-green-800 transition-colors duration-300 shadow-lg' // Darker green button
+            className='inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-full hover:bg-green-700 transition-colors duration-300 shadow-lg' // Darker green button
           >
             Download Event Brochure
           </a>
@@ -65,9 +65,29 @@ const Members = () => {
           <div className='flex items-start gap-4 p-6 bg-white rounded-lg shadow-md border border-green-200'> 
             <div className='flex-shrink-0 p-3 bg-green-200 rounded-full'> 
        
-              <svg className="w-7 h-7 text-green-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21v-4.75m0-1.096L9.663 9.406m-2.235 5.545L3.89 12M14.337 9.406L12 4.5m2.337 4.906h2.82M8.406 12L12 4.5m-3.594 7.5l-2.82 2.82" />
-              </svg>
+             <svg
+  className="w-7 h-7 text-green-800"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  strokeWidth={1.5}
+  stroke="currentColor"
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M12 3C7 3 3 7.5 3 12.5S7 22 12 22s9-4.5 9-9.5S17 3 12 3z"
+  />
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M8 13c1.5 2 3.5 3 4 5 0 0 1.5-3 4-5"
+  />
+  <circle cx="8" cy="10" r="0.8" fill="currentColor" />
+  <circle cx="12" cy="8" r="0.8" fill="currentColor" />
+  <circle cx="16" cy="10" r="0.8" fill="currentColor" />
+</svg>
+
             </div>
             <div>
               <h3 className='text-2xl font-bold text-green-800'>Our Collective Green Goal</h3>

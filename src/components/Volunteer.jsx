@@ -20,7 +20,7 @@
               Meet Our Elite Volunteers
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Dedicated individuals working tirelessly to make Voice of Wild a
+              Dedicated individuals working tirelessly to make Voice of the Wild a
               historic success
             </p>
           </div>
