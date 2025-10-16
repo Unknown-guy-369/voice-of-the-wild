@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-400 leading-relaxed">
               Voice of the Wild - One Voice, One Moment, One Pledge—Save Nature! Join India's largest 
-              virtually synchronized climate pledge on October 24, 2025.
+              virtually synchronized climate pledge on December 02, 2025.
             </p>
           </div>
           

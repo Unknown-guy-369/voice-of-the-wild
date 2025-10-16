@@ -9,6 +9,7 @@ import VolunteerCarousel from '../components/Volunteer'
 import CommunityMembers from '../components/Community_mem'
 import Stats from '../components/Stats'
 import About from '../components/About'
+import FounderSection from '../components/FounderSection'
 
 const MainSite = () => {
   return (
@@ -17,6 +18,7 @@ const MainSite = () => {
       <Header />
       <Hero />
       <About />
+      <FounderSection />
       <Members /> 
       <CommunityMembers />
       {/* <Stats /> Will enable on event day */} 

@@ -1,9 +1,9 @@
-// src/pages/AmbassadorUploadPage.jsx
-
-import { storage } from "../../firebase_app"; // Adjust path as needed
+import { storage } from "../../firebase_app"; 
 import { useState, useEffect } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from 'uuid'; // For unique file names
+import imageCompression from 'browser-image-compression';
+
 
 function AmbassadorUploadPage() {
   const [name, setName] = useState("");
@@ -153,7 +153,7 @@ function AmbassadorUploadPage() {
               <label className="block text-green-700 font-semibold mb-2">👤 Your Full Name</label>
               <input
                 type="text"
-                placeholder="e.g., Jane Doe"
+                placeholder="e.g., Kiran kumar "
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full px-4 py-3 border-2 border-green-200 rounded-lg focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100 transition-colors"
@@ -166,7 +166,7 @@ function AmbassadorUploadPage() {
               <label className="block text-green-700 font-semibold mb-2">💼 Your Role/Title</label>
               <input
                 type="text"
-                placeholder="e.g., Founder & CEO of GreenTech"
+                placeholder="e.g., Founder & CEO of Voice of the Wild"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
                 className="w-full px-4 py-3 border-2 border-green-200 rounded-lg focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100 transition-colors"
