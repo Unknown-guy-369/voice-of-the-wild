@@ -47,7 +47,7 @@ const CheckIcon = () => (
 // --- Main Component ---
 const OrganizationAbout = () => {
     return (
-        <section id="About" className="py-20 md:py-24 bg-gray-50">
+        <section id="about" className="py-20 md:py-24 bg-gray-50">
             <div className="container mx-auto px-4">
 
                 {/* --- Header --- */}

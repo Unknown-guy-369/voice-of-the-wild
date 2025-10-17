@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
             
-              <img src="vow_logo.jpg" className='w-8 h-8 rounded-full' alt="logo" />
+              <img src="vow_logo.webp" className='w-8 h-8 rounded-full' alt="logo" />
               <span className="font-bold text-xl">Climate Pledge</span>
             </div>
             <p className="text-gray-400 leading-relaxed">

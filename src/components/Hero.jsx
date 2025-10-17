@@ -28,7 +28,7 @@ const Hero = () => {
         </p>
 
         <div className='flex flex-col md:flex-row items-center justify-center gap-6 pt-8'>
-          <a href='#Register_page' className='bg-green-500 text-white px-8 py-3 font-bold shadow-xl rounded-full hover:bg-green-600 hover:shadow-2xl transition duration-300'>
+          <a href='#register' className='bg-green-500 text-white px-8 py-3 font-bold shadow-xl rounded-full hover:bg-green-600 hover:shadow-2xl transition duration-300'>
             Take the Pledge Now
           </a>
           <div className='flex items-center justify-center'>

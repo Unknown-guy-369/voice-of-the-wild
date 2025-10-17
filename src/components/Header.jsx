@@ -28,8 +28,8 @@ useEffect(()=>{
                     </span>
                 </div>
                 <div className='hidden md:flex items-center space-x-3.5 overflow-hidden'>
-                    <a href='#About'  className={`font-semibold  ${isScroll?'text-gray-900':'text-white'}`}>About</a>
-                    <a href='#Register_page' className={`font-semibold  ${isScroll?'text-gray-900':'text-white'}`}>Register</a>
+                    <a href='#about'  className={`font-semibold  ${isScroll?'text-gray-900':'text-white'}`}>About</a>
+                    <a href='#register' className={`font-semibold  ${isScroll?'text-gray-900':'text-white'}`}>Register</a>
                     <a  href='#contact' className={`font-semibold  ${isScroll?'text-gray-900':'text-white'}`}>Contact</a>
                 </div>
             </div>

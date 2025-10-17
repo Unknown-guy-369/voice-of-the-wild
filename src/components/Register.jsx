@@ -2,7 +2,7 @@ import React from 'react'
 
 const Register = () => {
   return (
-    <section id='Register_page' className=' text-center min-h-screen '>
+    <section id='register' className=' text-center min-h-screen '>
         <div className=' pt-12 px-5' >
             {/* Text */}
             <span className='block text-6xl font-bold text-gray-900 mb-8'>Join Voice of the Wild</span>
