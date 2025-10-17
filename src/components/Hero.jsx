@@ -7,7 +7,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-green-800 bg-blend-screen bg-no-repeat"
         style={{
-          backgroundImage: 'url(img2.webp)'
+          backgroundImage: 'url(hero.webp)'
         }}
       >
       <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-black/60"></div>
