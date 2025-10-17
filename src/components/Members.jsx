@@ -77,7 +77,7 @@ const Members = () => {
         {/* Event Poster */}
         <div className='lg:w-5/12 container pt-10 lg:pt-0'>
           <img 
-            src="./poster(1).jpg" 
+            src="./og-banner.webp" 
             className='block w-full h-auto rounded-3xl shadow-2xl border-4 border-green-400' 
             alt="Event Poster" 
           />

@@ -46,24 +46,30 @@ const handleSubmit = async (e) => {
   setIsUploading(true);
   setUploadSuccess(false);
   setError(null);
+  setUploadProgress(0);
 
   try {
-    //  Compress the image first
+    //  Compress and convert to WebP
     const options = {
-      maxSizeMB: 0.3,          // target ~300 KB
-      maxWidthOrHeight: 800,   // resize to max 800px
+      maxSizeMB: 0.3, // Target size ~300KB
+      maxWidthOrHeight: 800, // Resize max dimension
       useWebWorker: true,
-      initialQuality: 0.8      // ensure good visual clarity
+      fileType: "image/webp", // Force WebP output
     };
+
     const compressedFile = await imageCompression(file, options);
 
-    //  Create a unique filename
-    const fileExtension = file.name.split('.').pop();
-    const uniqueFileName = `${uuidv4()}.${fileExtension}`;
+    // Rename file to .webp 
+    const uniqueFileName = `${uuidv4()}.webp`;
     const storageRef = ref(storage, `photos/${uniqueFileName}`);
 
-    //  Upload the compressed file
-    const uploadTask = uploadBytesResumable(storageRef, compressedFile);
+    //  Set correct metadata for WebP
+    const metadata = {
+      contentType: "image/webp",
+    };
+
+    // Upload to Firebase
+    const uploadTask = uploadBytesResumable(storageRef, compressedFile, metadata);
 
     uploadTask.on(
       "state_changed",
@@ -78,9 +84,10 @@ const handleSubmit = async (e) => {
       },
       async () => {
         try {
+          // 5. Download URL
           const photoUrl = await getDownloadURL(uploadTask.snapshot.ref);
 
-          // Save details to backend
+          //save backend
           await fetch(import.meta.env.VITE_VOLUNTEER_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -116,7 +123,7 @@ const handleSubmit = async (e) => {
         {/* Header Section */}
         <div className="text-center mb-8">
           <div className='mb-4 flex items-center justify-center'>
-            <img src="vow_logo.jpg" className='rounded-full w-24 h-24' alt="VOW Logo" />
+            <img src="vow_logo.webp" className='rounded-full w-24 h-24' alt="VOW Logo" />
           </div>
           <h1 className="text-3xl font-bold text-green-800 mb-2">Join Nature's Mission</h1>
           <p className="text-green-600 text-sm leading-relaxed">Take the pledge to protect our planet and become an Earth Guardian</p>

@@ -53,23 +53,27 @@ function AmbassadorUploadPage() {
   setUploadProgress(0);
 
   try {
-    // Compress the image
+    // Compress and convert to WebP
     const options = {
       maxSizeMB: 0.3,          // target ~300 KB
-      maxWidthOrHeight: 800,   // max width or height
+      maxWidthOrHeight: 800,   // resize max dimension
       useWebWorker: true,
-      initialQuality: 0.8      // keep good visual clarity
+      fileType: "image/webp",  // force WebP output
     };
 
     const compressedFile = await imageCompression(file, options);
 
-    //Create a unique filename
-    const fileExtension = file.name.split('.').pop();
-    const uniqueFileName = `${uuidv4()}.${fileExtension}`;
+    // Create unique filename with .webp extension
+    const uniqueFileName = `${uuidv4()}.webp`;
     const storageRef = ref(storage, `photo_ambd/${uniqueFileName}`);
 
-    //  Upload the compressed file
-    const uploadTask = uploadBytesResumable(storageRef, compressedFile);
+    // Set metadata for WebP
+    const metadata = {
+      contentType: "image/webp",
+    };
+
+    // Upload compressed file to Firebase
+    const uploadTask = uploadBytesResumable(storageRef, compressedFile, metadata);
 
     uploadTask.on(
       "state_changed",
@@ -86,7 +90,7 @@ function AmbassadorUploadPage() {
         try {
           const photoUrl = await getDownloadURL(uploadTask.snapshot.ref);
 
-          // Save ambassador details to backend
+          
           await fetch(import.meta.env.VITE_AMBASSADOR_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -117,14 +121,13 @@ function AmbassadorUploadPage() {
     setUploadProgress(0);
   }
 };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Header Section */}
         <div className="text-center mb-8">
           <div className='mb-4 flex items-center justify-center'>
-            <img src="vow_logo.jpg" className='rounded-full w-24 h-24' alt="VOW Logo" />
+            <img src="vow_logo.webp" className='rounded-full w-24 h-24' alt="VOW Logo" />
           </div>
           <h1 className="text-3xl font-bold text-green-800 mb-2">Become an Earth Ambassador</h1>
           <p className="text-green-600 text-sm leading-relaxed">Share your passion and inspire others to protect our planet.</p>

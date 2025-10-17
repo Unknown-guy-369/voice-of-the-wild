@@ -1,13 +1,89 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Basic Setup -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="/vow_logo.jpg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <title>Voice of the Wild</title>
+    <!-- Title and Description -->
+    <title>Voice of the Wild | Join India's Green Movement</title>
+    <meta
+      name="description"
+      content="Voice of the Wild is a nationwide movement uniting students, volunteers, and organizations to protect wildlife and build a sustainable India. Take the pledge today!"
+    />
+    <meta
+      name="keywords"
+      content="voice of the wild, wildlife, environment, sustainability,India's Largest Virtually Synchronized Pledge on Climate Change, India, volunteer, student clubs, green movement, climate change pledge, conservation"
+    />
+    <meta name="author" content="Abishek Priyan M" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://voiceofthewild.org" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/vow_logo.jpg" />
+    <link rel="apple-touch-icon" href="/vow_logo.jpg" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Open Graph (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Voice of the Wild | India's Green Movement" />
+    <meta
+      property="og:description"
+      content="Join India's largest youth-led environmental initiative to protect wildlife and promote sustainability."
+    />
+    <meta property="og:image" content="https://voiceofthewild.org/og-banner.jpg" />
+    <meta property="og:url" content="https://voiceofthewild.org" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IN" />
+
+    
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1B5E20" />
+
+    <!-- Preload Hero Image for Faster Display -->
+    <link rel="preload" as="image" href="/og-banner.jpg" />
+
+    <!-- Structured Data (JSON-LD for Google Knowledge Graph) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Voice of the Wild",
+        "url": "https://voiceofthewild.org",
+        "logo": "https://voiceofthewild.org/vow_logo.jpg",
+        "sameAs": [
+          "https://www.instagram.com/voiceofthewild25",
+        ],
+        "description": "Voice of the Wild is a nationwide movement uniting students and volunteers to protect wildlife and promote sustainability.",
+        "founder": {
+          "@type": "Person",
+          "name": "Dr. J. Kirankumar"
+        },
+        "foundingDate": "2025",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "India"
+        }
+        "creator": {
+        "@type": "Person",
+        "name": "Abishek Priyan M",
+        "jobTitle": "Web Developer",
+        "url": "https://voiceofthewild.org"
+  }
+      }
+    </script>
+
+    <!-- PWA manifest (optional for installable web app) -->
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

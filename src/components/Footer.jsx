@@ -29,7 +29,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#Register_page" className="text-gray-400 hover:text-green-400 transition-colors">
+                <a href="#register" className="text-gray-400 hover:text-green-400 transition-colors">
                   Register Now
                 </a>
               </li>

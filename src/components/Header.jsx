@@ -21,7 +21,7 @@ useEffect(()=>{
             <div className='flex items-center justify-between h-16 '>
                 <div className='flex items-center space-x-2 '>
                     <div >
-                        <img src="vow_logo.jpg" className='rounded-3xl ' alt="logo" height={38} width={38} />
+                        <img src="vow_logo.webp" className='rounded-3xl ' alt="logo" height={38} width={38} />
                     </div>
                     <span className={`font-bold text-lg ${isScroll?'text-grey-900':'text-white'}`}>
                         Voice of the Wild

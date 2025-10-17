@@ -14,7 +14,7 @@ const Register = () => {
         <div className="bg-green-100 rounded-2xl p-8 md:p-12 mx-auto shadow-xl border border-green-200">
     
           <div className='mb-6 flex items-center justify-center'>
-            <img src="vow_logo.jpg" className='rounded-full w-24 h-24 md:w-28 md:h-28 border-4 border-white shadow-md' alt="Voice of the Wild Logo" />
+            <img src="vow_logo.webp" className='rounded-full w-24 h-24 md:w-28 md:h-28 border-4 border-white shadow-md' alt="Voice of the Wild Logo" />
           </div>
           
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -63,20 +63,20 @@ const Register = () => {
       </div>
          <div className="mt-16 px-14 grid md:grid-cols-3 gap-8 text-center">
           <div className="bg-green-100 rounded-xl p-6">
-            <img src="IBR_logo.png" className='text-3xl mb-3 mx-auto h-20' alt="IBR_logo" />
+            <img src="IBR_logo.webp" className='text-3xl mb-3 mx-auto h-20' alt="IBR_logo" />
             
             <h4 className="font-semibold text-gray-900 mb-2">IBR Certified</h4>
             <p className="text-gray-600 text-sm">Official India Book of Records attempt with verified credibility</p>
           </div>
           
           <div className="bg-green-100 rounded-xl p-6">
-            <img src="vow_logo.jpg" className='rounded-full mx-auto w-23 h-23' alt="vow_logo" />
+            <img src="vow_logo.webp" className='rounded-full mx-auto w-23 h-23' alt="vow_logo" />
             <h4 className="font-semibold text-gray-900 mb-2">Largest Volunteer Conclave in Tamil Nadu</h4>
             <p className="text-gray-600 text-sm">First-of-its-kind in volunteering for Climate change</p>
           </div>
           
           <div className="bg-green-100 rounded-xl p-6">
-            <img src="stg_logo.png" className='rounded-full mx-auto h-23' alt="stg_logo" />
+            <img src="stg_logo.webp" className='rounded-full mx-auto h-23' alt="stg_logo" />
             <h4 className="font-semibold text-gray-900 mb-2">Green Legacy</h4>
             <p className="text-gray-600 text-sm">Emphasizes responsibility and care for the planet</p>
           </div>
