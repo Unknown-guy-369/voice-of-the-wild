@@ -19,8 +19,8 @@ const MainSite = () => {
       <Hero />
       <About />
       <FounderSection />
-      <Members /> 
       <CommunityMembers />
+      <Members /> 
       {/* <Stats /> Will enable on event day */} 
       <Register />
       <VolunteerCarousel />

@@ -9,11 +9,14 @@ const Footer = () => {
       <div className="container-max">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
             
+            <div className="flex items-center space-x-2 mb-4">
+              
               <img src="vow_logo.webp" className='w-8 h-8 rounded-full' alt="logo" />
               <span className="font-bold text-xl">Climate Pledge</span>
+             
             </div>
+            
             <p className="text-gray-400 leading-relaxed">
               Voice of the Wild - One Voice, One Moment, One Pledge—Save Nature! Join India's largest 
               virtually synchronized climate pledge on December 02, 2025.
@@ -50,7 +53,7 @@ const Footer = () => {
               
               <FontAwesomeIcon  icon={faXTwitter} size='2x' className='text-gray-200' /> */}
               
-              <a href="https://www.instagram.com/voiceofthewild25?igsh=MXgxOGczNHQ4Y2s5Zg=="><FontAwesomeIcon href='https://www.instagram.com/voiceofthewild25?igsh=MXgxOGczNHQ4Y2s5Zg==' icon={faInstagram} size='2x' className='text-gray-200' /></a>
+              <a href="https://www.instagram.com/voiceofthewild25/"><FontAwesomeIcon href='https://www.instagram.com/voiceofthewild25?igsh=MXgxOGczNHQ4Y2s5Zg==' icon={faInstagram} size='2x' className='text-gray-200' /></a>
 
             </div>
           </div>

@@ -21,11 +21,14 @@ useEffect(()=>{
             <div className='flex items-center justify-between h-16 '>
                 <div className='flex items-center space-x-2 '>
                     <div >
-                        <img src="vow_logo.webp" className='rounded-3xl ' alt="logo" height={38} width={38} />
+                        <a href="#home">
+                        <img src="vow_logo.webp"  className='rounded-3xl ' alt="logo" height={38} width={38} />
+                        </a>
                     </div>
                     <span className={`font-bold text-lg ${isScroll?'text-grey-900':'text-white'}`}>
                         Voice of the Wild
                     </span>
+                    
                 </div>
                 <div className='hidden md:flex items-center space-x-3.5 overflow-hidden'>
                     <a href='#about'  className={`font-semibold  ${isScroll?'text-gray-900':'text-white'}`}>About</a>

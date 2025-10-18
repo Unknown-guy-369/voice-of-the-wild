@@ -5,8 +5,8 @@ const Register = () => {
     <section id='register' className=' text-center min-h-screen '>
         <div className=' pt-12 px-5' >
             {/* Text */}
-            <span className='block text-6xl font-bold text-gray-900 mb-8'>Join Voice of the Wild</span>
-            <span className=' text-xl text-gray-500'>Be part of history! Join thousands of others in making a commitment to protect our planet. Your pledge will be part of the Indian Book of Records.</span>
+            <span className='block text-4xl md:text-6xl font-bold text-gray-900 mb-8'>Join Voice of the Wild</span>
+            <span className=' md:text-xl text-gray-500'>Be part of history! Join thousands of others in making a commitment to protect our planet. Your pledge will be part of the Indian Book of Records.</span>
         </div>
        
         <div className="text-center px-4 md:px-20 mt-14">

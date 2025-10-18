@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className='relative px-14 pt-10 bg-green-800 min-h-screen flex items-center justify-center overflow-hidden'>
+    <section id='home' className='relative px-14 pt-10 bg-green-800 min-h-screen flex items-center justify-center overflow-hidden'>
     {/* Background image of hornbill */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-green-800 bg-blend-screen bg-no-repeat"
@@ -15,14 +15,14 @@ const Hero = () => {
       
       {/* Content */}
       <div className='relative z-10 text-center'>
-      <h1 className="text-5xl md:text-8xl text-white font-bold leading-tight">
+      <h1 className="text-4xl md:text-8xl text-white font-bold leading-tight">
           Voice of the Wild
         </h1>
-        <p className="text-3xl md:text-5xl text-green-300 font-bold mt-2">
+        <p className="text-xl md:text-5xl text-green-300 font-bold mt-2">
           Uniting Voices - From Awareness to Action
         </p>
 
-        <p className="text-lg md:text-xl text-gray-200 mt-8 mb-8 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-md md:text-xl text-gray-200 mt-8 mb-8 max-w-4xl mx-auto leading-relaxed">
           On December 02, 2025, National Pollution Control Day, join 15,000+ voices in India's first 
           virtually synchronized climate pledge - an official India Book of Records attempt.
         </p>
