@@ -4,7 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from 'uuid';
 import imageCompression from 'browser-image-compression';
 import Cropper from "react-easy-crop";
-import getCroppedImg from "../utils/getCroppedImg"; // Assuming you have this helper
+import getCroppedImg from "../utils/getCroppedImg"; 
 
 // --- Import Lucid React Icons ---
 import {
