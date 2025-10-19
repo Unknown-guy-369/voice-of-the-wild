@@ -1,0 +1,20 @@
+{
+  "name": "Voice of the Wild",
+  "short_name": "VOTW",
+  "icons": [
+    {
+      "src": "/vow_logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    },
+    {
+      "src": "/vow_logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2E7D32",
+  "background_color": "#ffffff"
+}
