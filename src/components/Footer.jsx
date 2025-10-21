@@ -1,6 +1,6 @@
-import React from 'react'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram,faXTwitter,faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram} from "@fortawesome/free-brands-svg-icons";
 
 
 const Footer = () => {
@@ -47,11 +47,6 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-             
-{/*              
-              <FontAwesomeIcon href='' icon={faFacebook} size='2x' className='text-gray-200' />
-              
-              <FontAwesomeIcon  icon={faXTwitter} size='2x' className='text-gray-200' /> */}
               
               <a href="https://www.instagram.com/voiceofthewild25/"><FontAwesomeIcon href='https://www.instagram.com/voiceofthewild25?igsh=MXgxOGczNHQ4Y2s5Zg==' icon={faInstagram} size='2x' className='text-gray-200' /></a>
 

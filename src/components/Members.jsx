@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {Globe2,BookOpen,GraduationCap} from 'lucide-react';
 const Members = () => {
   return (
